@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+
+        <template id="portal_my_details_fields" inherit_id="portal.portal_my_details_fields">
+            <xpath expr="//div[@t-attf-class][last()]" position="after">
+                <div t-attf-class="mb-3 #{error.get('credit') and 'o_has_error' or ''} col-xl-6">
+                    <label class="col-form-label" for="credit">Outstanding Payment</label>
+                    <input type="text" name="credit" disabled="1" t-att-value="partner.credit" />
+                </div>
+                <div t-attf-class="mb-3 #{error.get('credit_limit') and 'o_has_error' or ''} col-xl-6">
+                    <label class="col-form-label" for="credit_limit">Credit Limit</label>
+                    <input type="text" name="credit_limit" t-att-value="partner.credit_limit" disabled="1"/>
+                </div>
+            </xpath>
+        </template>
+
+
+    </data>
+</odoo>
